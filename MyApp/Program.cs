@@ -22,7 +22,7 @@ namespace MyApp
 
                 if(choix == "1")
                 {
-                   Commune c = _communeService.ajouterCommune();
+                   Commune c = _communeService.ajouterCommune(listeDepartement);
                     listcommune.Add(c);
                 }
                 else if(choix == "2")
@@ -35,7 +35,7 @@ namespace MyApp
                 }
                 else if(choix == "4")
                 {
-                    _departementService.ajouterDepartement();
+                    _departementService.ajouterDepartement(listcommune);
                 }
                 else if(choix == "5")
                 {

@@ -14,14 +14,20 @@ namespace MyApp.Services
         {
             this._demandeALutilisateur = demandealutilisateur;
         }
-        public Commune ajouterCommune()
+        public Commune ajouterCommune(List<Departement> listeDepartement)
         {
             Commune c = new Commune();
             c.Nom = _demandeALutilisateur.saisieNom("Quel est le nom de votre ville ?");
             c.CodePost = _demandeALutilisateur.saisieEntier("Quel est de code postal ?");
             c.NbHab = _demandeALutilisateur.saisieEntier("Combie y a-t-il d'habitants ?");
             c.codeDepartement = _demandeALutilisateur.saisieEntier("Quel est le code du département de la commune");
-
+            foreach(Departement d in listeDepartement)
+            {
+                if (d.code == c.codeDepartement)
+                {
+                    d.listeCommune.Add(c);
+                }
+            }
             return c;
         }
 

@@ -8,5 +8,6 @@ namespace MyApp
     {
         public int code;
         public string nom;
+        public List<Commune>listeCommune;
     }
 }
