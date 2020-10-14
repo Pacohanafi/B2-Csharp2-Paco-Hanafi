@@ -9,10 +9,12 @@ namespace MyApp
     {
         private static DemandeALutilisateur _DemandeALutilisateur = new DemandeALutilisateur();
         private static CommuneService _communeService = new CommuneService(_DemandeALutilisateur);
+        private static DepartementService _departementService = new DepartementService(_DemandeALutilisateur);
 
         static void Main(string[] args)
         {
             List<Commune> listcommune = new List<Commune>();
+            List<Departement> listeDepartement = new List<Departement>();
 
             while(true)
             {
@@ -30,6 +32,14 @@ namespace MyApp
                 else if(choix == "3")
                 {
                     _communeService.calculNbtotalHabs(listcommune);
+                }
+                else if(choix == "4")
+                {
+                    _departementService.ajouterDepartement();
+                }
+                else if(choix == "5")
+                {
+                    _departementService.affiche(listeDepartement);
                 }
                 else if(choix == "Q" || choix == "q")
                 {
@@ -49,6 +59,8 @@ namespace MyApp
             Console.WriteLine("1.Créer une nouvelle communes");
             Console.WriteLine("2.Afficher l'ensemble des communes");
             Console.WriteLine("3.Afficher le nombre total d'habitants");
+            Console.WriteLine("4 Créer un Département");
+            Console.WriteLine("5 Afficher un Département");
             Console.WriteLine("Q.Quitter");
             string choix = Console.ReadLine();
             return choix;

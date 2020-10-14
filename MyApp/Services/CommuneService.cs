@@ -20,6 +20,7 @@ namespace MyApp.Services
             c.Nom = _demandeALutilisateur.saisieNom("Quel est le nom de votre ville ?");
             c.CodePost = _demandeALutilisateur.saisieEntier("Quel est de code postal ?");
             c.NbHab = _demandeALutilisateur.saisieEntier("Combie y a-t-il d'habitants ?");
+            c.codeDepartement = _demandeALutilisateur.saisieEntier("Quel est le code du département de la commune");
 
             return c;
         }
@@ -50,6 +51,7 @@ namespace MyApp.Services
                 string message_p2 = "Nombre d'habitants: " + nb;
                 Console.WriteLine(message_p1);
                 Console.WriteLine(message_p2);
+                Console.WriteLine("La commune appartient au département " + c.codeDepartement);
             }
         }
     }

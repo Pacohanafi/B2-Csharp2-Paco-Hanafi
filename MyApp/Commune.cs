@@ -9,5 +9,6 @@ namespace MyApp
         public string Nom;
         public int CodePost;
         public int NbHab;
+        public int codeDepartement;
     }
 }

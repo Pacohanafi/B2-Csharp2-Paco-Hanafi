@@ -22,12 +22,12 @@ namespace MyApp.Services
                 }
                 else if (int.TryParse(Nom, out valeurconvertie))
                 {
-                    Console.WriteLine("Saisie incorrecte: le nom de votre ville ne peut pas être un nombre");
+                    Console.WriteLine("Saisie incorrecte: le nom ne peut pas être un nombre");
                     Nom = Console.ReadLine();
                 }
                 else if (Nom[0] < 65 || Nom[0] > 90)
                 {
-                    Console.WriteLine("Saisie incorrecte: veuillez commencer le nom de votre commune par une majuscule");
+                    Console.WriteLine("Saisie incorrecte: veuillez commencer le nom par une majuscule");
                     Nom = Console.ReadLine();
                 }
                 else
